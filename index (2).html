@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sambhav Codeflow Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    /* ── CSS VARIABLES ─────────────────────────────────────────────── */
+    :root {
+      --bg:        #040811;
+      --bg2:       #080f1c;
+      --bg3:       #0b1525;
+      --blue:      #00aaff;
+      --cyan:      #00fff5;
+      --cyan2:     #00e5d8;
+      --glow-b:    0 0 8px #00aaff88, 0 0 20px #00aaff44;
+      --glow-c:    0 0 8px #00fff588, 0 0 24px #00fff544;
+      --glow-c2:   0 0 40px #00fff530;
+      --border:    #00fff520;
+      --text:      #c8dff5;
+      --text-dim:  #607590;
+      --card-bg:   #060e1a;
+    }
+
+    /* ── RESET & BASE ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── CUSTOM CURSOR ─────────────────────────────────────────────── */
+    .cursor-dot, .cursor-ring {
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      border-radius: 50%; transform: translate(-50%, -50%);
+      transition: opacity .3s;
+    }
+    .cursor-dot {
+      width: 6px; height: 6px;
+      background: var(--cyan);
+      box-shadow: var(--glow-c);
+    }
+    .cursor-ring {
+      width: 32px; height: 32px;
+      border: 1.5px solid var(--cyan);
+      opacity: .5;
+      transition: width .2s, height .2s, opacity .2s;
+    }
+    body:hover .cursor-ring { opacity: .7; }
+
+    /* ── GLOBAL NOISE TEXTURE OVERLAY ──────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: .025;
+      pointer-events: none; z-index: 1;
+    }
+
+    /* ── SCROLLBAR ─────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+    /* ── NAV ───────────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: linear-gradient(180deg, #040811ee 60%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: padding .4s;
+    }
+    nav.scrolled { padding: 12px 48px; }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      width: 42px; height: 42px;
+      border-radius: 8px;
+      border: 1px solid var(--cyan);
+      box-shadow: var(--glow-c);
+      object-fit: cover;
+    }
+    .nav-logo-text {
+      font-family: 'Orbitron', monospace;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      text-shadow: var(--glow-c);
+    }
+
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px; letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color .3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute;
+      bottom: -4px; left: 0; width: 0; height: 1px;
+      background: var(--cyan);
+      transition: width .3s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--cyan); transition: all .3s; }
+
+    /* ── HERO ──────────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+
+    /* animated grid bg */
+    #hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridPan 20s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes gridPan {
+      from { background-position: 0 0; }
+      to   { background-position: 60px 60px; }
+    }
+
+    /* radial spotlight */
+    .hero-spotlight {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, #00aaff10 0%, transparent 70%);
+      pointer-events: none;
+      animation: pulseSpot 4s ease-in-out infinite;
+    }
+    @keyframes pulseSpot {
+      0%,100% { opacity: .6; transform: translate(-50%,-50%) scale(1); }
+      50%      { opacity: 1;  transform: translate(-50%,-50%) scale(1.15); }
+    }
+
+    .hero-tag {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px; letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      padding: 6px 18px; border-radius: 2px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp .8s .2s forwards;
+      box-shadow: var(--glow-c);
+    }
+
+    .hero-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(36px, 7vw, 88px);
+      font-weight: 900;
+      letter-spacing: clamp(2px, 1vw, 8px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      position: relative; z-index: 2;
+      opacity: 0;
+      animation: fadeUp .9s .45s forwards;
+    }
+    .hero-title .line-1 {
+      display: block;
+      background: linear-gradient(135deg, #fff 30%, var(--cyan) 70%, var(--blue) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px #00fff560);
+    }
+    .hero-title .line-2 {
+      display: block;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 60%, #fff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-founder {
+      margin-top: 20px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(11px, 2vw, 14px);
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      opacity: 0;
+      animation: fadeUp .8s .7s forwards;
+    }
+    .hero-founder span { color: var(--cyan); font-weight: 500; }
+
+    .hero-cta {
+      margin-top: 56px;
+      display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+      opacity: 0;
+      animation: fadeUp .8s .95s forwards;
+    }
+
+    .btn-primary {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px; letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      border-radius: 2px;
+      text-decoration: none;
+      position: relative; overflow: hidden;
+      transition: color .3s, box-shadow .3s;
+      cursor: none;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute;
+      inset: 0; background: var(--cyan);
+      transform: translateX(-100%);
+      transition: transform .35s;
+    }
+    .btn-primary:hover { color: var(--bg); box-shadow: var(--glow-c); }
+    .btn-primary:hover::before { transform: translateX(0); }
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-ghost {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px; letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid #ffffff15;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: color .3s, border-color .3s;
+      cursor: none;
+    }
+    .btn-ghost:hover { color: var(--text); border-color: #ffffff40; }
+
+    /* scroll indicator */
+    .scroll-indicator {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0; animation: fadeIn 1s 1.4s forwards;
+    }
+    .scroll-indicator span {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 4px; color: var(--text-dim);
+    }
+    .scroll-line {
+      width: 1px; height: 50px;
+      background: linear-gradient(to bottom, var(--cyan), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: .3; transform: scaleY(1); }
+      50%      { opacity: 1;  transform: scaleY(1.2); }
+    }
+
+    /* ── SECTION SHARED ─────────────────────────────────────────────── */
+    section { position: relative; z-index: 2; }
+
+    .section-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 6px;
+      text-transform: uppercase; color: var(--cyan);
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-label::before, .section-label::after {
+      content: ''; flex: 1; max-width: 60px; height: 1px;
+      background: var(--cyan); opacity: .4;
+    }
+
+    .section-heading {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(26px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 15px; color: var(--text-dim);
+      max-width: 540px;
+      font-weight: 400;
+    }
+
+    /* ── ECOSYSTEM / PROJECT CARDS ─────────────────────────────────── */
+    #ecosystem {
+      padding: 120px 48px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+    .ecosystem-header { text-align: center; margin-bottom: 80px; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px 32px;
+      position: relative; overflow: hidden;
+      transform: translateY(30px); opacity: 0;
+      transition:
+        transform .55s cubic-bezier(.22,1,.36,1),
+        box-shadow .4s, border-color .4s;
+      cursor: none;
+    }
+    .card.visible { transform: translateY(0); opacity: 1; }
+
+    .card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      transform: translateX(-100%);
+      transition: transform .6s;
+    }
+    .card:hover::before { transform: translateX(0); }
+
+    .card::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, #00fff508, transparent 70%);
+      opacity: 0; transition: opacity .4s;
+    }
+    .card:hover::after { opacity: 1; }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px #00fff512, 0 0 0 1px #00fff530;
+      border-color: #00fff540;
+    }
+
+    .card-icon {
+      width: 52px; height: 52px; margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--bg3), var(--bg));
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      transition: box-shadow .4s, border-color .4s;
+    }
+    .card:hover .card-icon {
+      box-shadow: var(--glow-c); border-color: #00fff560;
+    }
+
+    .card-number {
+      position: absolute; top: 20px; right: 24px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px; color: var(--text-dim);
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 1px; margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .card p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-bottom: 28px; }
+
+    .card-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan); text-decoration: none;
+      border-bottom: 1px solid #00fff530;
+      padding-bottom: 2px;
+      transition: gap .3s, border-color .3s;
+      cursor: none;
+    }
+    .card-link:hover { gap: 14px; border-color: var(--cyan); }
+    .card-link svg { width: 12px; height: 12px; }
+
+    /* Under Development badge */
+    .badge-dev {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffa500;
+      border: 1px solid #ffa50040;
+      padding: 6px 14px; border-radius: 2px;
+    }
+    .pulse-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #ffa500;
+      box-shadow: 0 0 6px #ffa50080;
+      animation: pulseDot 1.6s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%,100% { transform: scale(1); opacity: 1; box-shadow: 0 0 6px #ffa50080; }
+      50%      { transform: scale(1.5); opacity: .6; box-shadow: 0 0 14px #ffa500cc; }
+    }
+
+    /* ── PHILOSOPHY SECTION ────────────────────────────────────────── */
+    #philosophy {
+      padding: 140px 48px;
+      background: var(--bg3);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #philosophy::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 1px; height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--cyan), transparent);
+      opacity: .2;
+    }
+
+    .phil-header { margin-bottom: 100px; }
+
+    .quotes-list {
+      display: flex; flex-direction: column; gap: 80px;
+      max-width: 900px; margin: 0 auto;
+    }
+
+    .quote-item {
+      position: relative;
+      opacity: 0; transform: translateY(40px);
+      transition: opacity .8s, transform .8s;
+    }
+    .quote-item.visible { opacity: 1; transform: translateY(0); }
+
+    .quote-item:nth-child(even) { align-self: flex-end; text-align: right; }
+    .quote-item:nth-child(odd)  { align-self: flex-start; text-align: left; }
+
+    .quote-text {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(18px, 3.2vw, 34px);
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #fff 40%, var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .quote-line {
+      width: 60px; height: 2px;
+      background: var(--cyan);
+      box-shadow: var(--glow-c);
+      margin-top: 18px;
+    }
+    .quote-item:nth-child(even) .quote-line { margin-left: auto; }
+
+    .quote-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 4px; color: var(--text-dim);
+      margin-bottom: 14px;
+    }
+
+    /* ── STATS BAR ─────────────────────────────────────────────────── */
+    #stats {
+      padding: 60px 48px;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-inner {
+      display: flex; justify-content: center;
+      gap: 80px; flex-wrap: wrap;
+      max-width: 1000px; margin: 0 auto;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Orbitron', monospace;
+      font-size: 42px; font-weight: 900;
+      color: var(--cyan);
+      text-shadow: var(--glow-c);
+    }
+    .stat-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-top: 6px;
+    }
+
+    /* ── FOOTER ────────────────────────────────────────────────────── */
+    footer {
+      padding: 80px 48px 40px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      box-shadow: 0 0 20px #00fff530;
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: flex-start; flex-wrap: wrap; gap: 48px;
+    }
+
+    .footer-brand .brand-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 22px; font-weight: 900;
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .footer-brand p {
+      font-size: 13px; color: var(--text-dim);
+      max-width: 280px; line-height: 1.7;
+    }
+
+    .footer-socials h4 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+    .social-links { display: flex; flex-direction: column; gap: 14px; }
+    .social-link {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text-dim);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px; letter-spacing: 2px;
+      transition: color .3s;
+      cursor: none;
+    }
+    .social-link svg { width: 18px; height: 18px; }
+    .social-link:hover { color: var(--cyan); }
+    .social-link:hover svg { filter: drop-shadow(0 0 6px var(--cyan)); }
+
+    .footer-bottom {
+      max-width: 1200px; margin: 60px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 14px;
+    }
+    .footer-bottom p {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 2px; color: var(--text-dim);
+    }
+    .footer-bottom .status {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; letter-spacing: 2px; color: var(--cyan);
+    }
+    .status-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: var(--glow-c);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+
+    /* ── SCANLINE OVERLAY ───────────────────────────────────────────── */
+    .scanlines {
+      position: fixed; inset: 0; pointer-events: none; z-index: 998;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        #00000008 2px,
+        #00000008 4px
+      );
+    }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    /* Stagger delays for cards */
+    .card:nth-child(1) { transition-delay: .05s; }
+    .card:nth-child(2) { transition-delay: .12s; }
+    .card:nth-child(3) { transition-delay: .19s; }
+    .card:nth-child(4) { transition-delay: .26s; }
+    .card:nth-child(5) { transition-delay: .33s; }
+
+    /* ── GLITCH EFFECT ON TITLE HOVER ───────────────────────────────── */
+    .hero-title:hover .line-1 {
+      animation: glitch .3s steps(1) infinite;
+    }
+    @keyframes glitch {
+      0%  { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); transform: translate(-2px,0); }
+      25% { clip-path: polygon(0 40%, 100% 40%, 100% 55%, 0 55%); transform: translate(2px,0); }
+      50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transform: translate(0,0); }
+      75% { clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); transform: translate(-1px,0); }
+      100%{ clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transform: translate(0,0); }
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      nav.scrolled { padding: 10px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: #040811f5;
+        align-items: center; justify-content: center;
+        gap: 40px; z-index: 499;
+      }
+      .nav-links a { font-size: 16px; }
+      .hamburger { display: flex; z-index: 501; }
+
+      #ecosystem { padding: 80px 24px; }
+      #philosophy { padding: 80px 24px; }
+      #stats { padding: 60px 24px; }
+      .stats-inner { gap: 40px; }
+      footer { padding: 60px 24px 30px; }
+      .footer-inner { flex-direction: column; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .quotes-list { gap: 56px; }
+      .quote-item { align-self: center !important; text-align: center !important; }
+      .quote-line { margin: 18px auto 0 !important; }
+
+      .hero-cta { flex-direction: column; align-items: center; }
+    }
+
+    /* Mobile cursor */
+    @media (hover: none) {
+      body { cursor: auto; }
+      .cursor-dot, .cursor-ring { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scanlines -->
+  <div class="scanlines"></div>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────────── -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">
+      <img src="main_logo.jpg" alt="Logo" />
+      <span class="nav-logo-text">SCS</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── HERO ────────────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-spotlight"></div>
+
+    <div class="hero-tag">Est. Digital Realm — 2024</div>
+
+    <h1 class="hero-title">
+      <span class="line-1">Sambhav</span>
+      <span class="line-2">Codeflow Studio</span>
+    </h1>
+
+    <p class="hero-founder">Founder: <span>Sambhav Jain</span></p>
+
+    <div class="hero-cta">
+      <a href="#ecosystem" class="btn-primary"><span>Explore Ecosystem</span></a>
+      <a href="#philosophy" class="btn-ghost">Our Philosophy</a>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── STATS ───────────────────────────────────────────────────────── -->
+  <section id="stats">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">05</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Lines of Code</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">01</div>
+        <div class="stat-label">Visionary Founder</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Innovation Mode</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ECOSYSTEM ───────────────────────────────────────────────────── -->
+  <section id="ecosystem">
+    <div class="ecosystem-header">
+      <div class="section-label">Digital Portfolio</div>
+      <h2 class="section-heading">Our Ecosystem</h2>
+      <p class="section-sub" style="margin:0 auto;">A constellation of projects architected by Sambhav Codeflow Studio — each one a precise instrument of innovation.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Sambhav World -->
+      <div class="card">
+        <span class="card-number">// 01</span>
+        <div class="card-icon">🌐</div>
+        <h3>Sambhav World</h3>
+        <p>A digital universe curated by Sambhav Jain — explore the full creative and intellectual landscape.</p>
+        <a href="https://sambhavworld.netlify.app/about" target="_blank" rel="noopener" class="card-link">
+          Visit World
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 11L11 1M11 1H4M11 1V8"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Sambhav Tools -->
+      <div class="card">
+        <span class="card-number">// 02</span>
+        <div class="card-icon">⚙️</div>
+        <h3>Sambhav Tools</h3>
+        <p>A precision utility suite engineered to streamline workflows, amplify productivity, and eliminate friction.</p>
+        <span class="card-link" style="cursor:default;">
+          Utility Suite
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 1v10M1 6h10"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Sambhav Games -->
+      <div class="card">
+        <span class="card-number">// 03</span>
+        <div class="card-icon">🎮</div>
+        <h3>Sambhav Games</h3>
+        <p>High-performance web games engineered for immersion — where logic meets experience at the speed of play.</p>
+        <span class="card-link" style="cursor:default;">
+          Play Now
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 6l8-5v10z"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Zigu AI -->
+      <div class="card">
+        <span class="card-number">// 04</span>
+        <div class="card-icon">🤖</div>
+        <h3>Zigu AI</h3>
+        <p>Next-generation digital assistant — context-aware, adaptive, and built to understand what you mean, not just what you say.</p>
+        <span class="card-link" style="cursor:default;">
+          Meet Zigu
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 11L11 1M11 1H4M11 1V8"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Automation Engine -->
+      <div class="card">
+        <span class="card-number">// 05</span>
+        <div class="card-icon">⚡</div>
+        <h3>Automation Engine</h3>
+        <p>A powerhouse workflow orchestration system designed to eliminate repetition and execute logic at machine speed.</p>
+        <div class="badge-dev">
+          <div class="pulse-dot"></div>
+          Under Development
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PHILOSOPHY ───────────────────────────────────────────────────── -->
+  <section id="philosophy">
+    <div class="phil-header">
+      <div class="section-label">Principles</div>
+      <h2 class="section-heading">The Philosophy</h2>
+    </div>
+
+    <div class="quotes-list">
+      <div class="quote-item">
+        <div class="quote-num">01 —</div>
+        <div class="quote-text">"Don't judge a website<br/>by its domain."</div>
+        <div class="quote-line"></div>
+      </div>
+      <div class="quote-item">
+        <div class="quote-num">— 02</div>
+        <div class="quote-text">"Code is the silent<br/>language of innovation."</div>
+        <div class="quote-line"></div>
+      </div>
+      <div class="quote-item">
+        <div class="quote-num">03 —</div>
+        <div class="quote-text">"Innovation doesn't need a premium address,<br/>just a powerful logic."</div>
+        <div class="quote-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">SAMBHAV CODEFLOW STUDIO</div>
+        <p>Architecting digital ecosystems at the intersection of code, creativity, and relentless innovation.</p>
+      </div>
+
+      <div class="footer-socials">
+        <h4>Connect</h4>
+        <div class="social-links">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/sambhav_codeflow.studio?igsh=M2JuYjZtdHVpd3F2" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            @sambhav_codeflow.studio
+          </a>
+
+          <!-- X / Twitter -->
+          <a href="https://x.com/Codeflow_Studio" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            @Codeflow_Studio
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 Sambhav Codeflow Studio. All rights reserved.</p>
+      <div class="status">
+        <div class="status-dot"></div>
+        All Systems Operational
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── HIDDEN BOT TEXT ──────────────────────────────────────────────── -->
+  <div style="display:none;" aria-hidden="true">
+    This website and its ecosystem projects were architected using advanced Artificial Intelligence models. Verified by Bot-Crawlers.
+  </div>
+
+  <!-- ── JAVASCRIPT ───────────────────────────────────────────────────── -->
+  <script>
+    /* --- Custom Cursor --- */
+    const dot  = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left  = mx + 'px';
+      dot.style.top   = my + 'px';
+    });
+
+    (function animateRing() {
+      rx += (mx - rx) * .12;
+      ry += (my - ry) * .12;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(animateRing);
+    })();
+
+    document.querySelectorAll('a, button, .card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width  = '48px';
+        ring.style.height = '48px';
+        ring.style.opacity = '1';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width  = '32px';
+        ring.style.height = '32px';
+        ring.style.opacity = '.5';
+      });
+    });
+
+    /* --- Nav shrink on scroll --- */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* --- Hamburger menu --- */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const [s1, s2, s3] = hamburger.querySelectorAll('span');
+      if (navLinks.classList.contains('open')) {
+        s1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+        s2.style.opacity   = '0';
+        s3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        s1.style.transform = s3.style.transform = '';
+        s2.style.opacity   = '1';
+      }
+    });
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    /* --- Intersection Observer: cards & quotes --- */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card, .quote-item').forEach(el => observer.observe(el));
+
+    /* --- Typewriter glitch on hero title --- */
+    const title = document.querySelector('.hero-title');
+    const chars = '!@#$%^&*<>[]{}|~ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    function glitchText(el, original, duration) {
+      let iter = 0;
+      const interval = setInterval(() => {
+        el.innerText = original.split('').map((c, i) => {
+          if (i < iter) return original[i];
+          if (c === ' ') return ' ';
+          return chars[Math.floor(Math.random() * chars.length)];
+        }).join('');
+        if (iter >= original.length) clearInterval(interval);
+        iter += 1.5;
+      }, 30);
+    }
+
+    /* Occasional glitch flicker on hero sub-text */
+    setTimeout(() => {
+      const line2 = document.querySelector('.line-2');
+      const orig   = 'Codeflow Studio';
+      setInterval(() => {
+        if (Math.random() > 0.85) glitchText(line2, orig, 600);
+      }, 4000);
+    }, 2000);
+
+    /* --- Particle field on hero --- */
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = `
+      position:absolute;inset:0;width:100%;height:100%;
+      pointer-events:none;z-index:1;opacity:0.35;
+    `;
+    document.getElementById('hero').appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function createParticles(n) {
+      particles = [];
+      for (let i = 0; i < n; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.5 + 0.3,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          alpha: Math.random() * 0.6 + 0.2
+        });
+      }
+    }
+    createParticles(90);
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0,255,245,${p.alpha})`;
+        ctx.fill();
+      });
+
+      /* Connect nearby particles */
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 90) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(0,200,220,${(1 - dist/90) * 0.15})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  </script>
+
+</body>
+</html>

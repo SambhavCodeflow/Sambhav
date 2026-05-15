@@ -1,1060 +1,1250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="no-referrer"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- ══ Primary SEO ══════════════════════════════════════════════════ -->
+  <title>Sambhav Codeflow Studio | Digital Projects by Sambhav Jain</title>
+  <meta name="description"        content="Sambhav Codeflow Studio is Sambhav Jain's digital studio — home of Sambhav World, Sambhav Tools, Sambhav Games, and Zigu AI. Explore all projects built by Sambhav Jain under Codeflow Studio."/>
+  <meta name="keywords"           content="Sambhav, Sambhav Jain, Sambhav Codeflow, Codeflow Studio, Sambhav Codeflow Studio, Sambhav World, Sambhav Tools, Sambhav Games, Zigu AI, Codeflow, digital studio India, web projects Sambhav"/>
+  <meta name="author"             content="Sambhav Jain"/>
+  <meta name="robots"             content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="theme-color"        content="#07080d"/>
+  <meta name="color-scheme"       content="dark"/>
+  <link rel="canonical"           href="https://sambhav-codeflow.netlify.app/"/>
+
+  <!-- ══ Favicon ══════════════════════════════════════════════════════ -->
+  <link rel="icon"             type="image/jpeg" href="https://i.ibb.co/HLkBNQQj/main-logo.jpg"/>
+  <link rel="shortcut icon"    type="image/jpeg" href="https://i.ibb.co/HLkBNQQj/main-logo.jpg"/>
+  <link rel="apple-touch-icon"                   href="https://i.ibb.co/HLkBNQQj/main-logo.jpg"/>
+  <meta name="msapplication-TileImage"  content="https://i.ibb.co/HLkBNQQj/main-logo.jpg"/>
+  <meta name="msapplication-TileColor" content="#07080d"/>
+
+  <!-- ══ Open Graph — WhatsApp · Facebook · LinkedIn preview ══════════ -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:site_name"   content="Sambhav Codeflow Studio"/>
+  <meta property="og:title"       content="Sambhav Codeflow Studio | By Sambhav Jain"/>
+  <meta property="og:description" content="Sambhav Jain's digital studio — Sambhav World, Sambhav Tools, Sambhav Games and Zigu AI, all in one place."/>
+  <meta property="og:image"       content="https://i.ibb.co/HLkBNQQj/main-logo.jpg"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt"   content="Sambhav Codeflow Studio Logo"/>
+  <meta property="og:url"         content="https://sambhav-codeflow.netlify.app/"/>
+  <meta property="og:locale"      content="en_IN"/>
+
+  <!-- ══ Twitter / X Card ═════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:site"        content="@Codeflow_Studio"/>
+  <meta name="twitter:creator"     content="@Codeflow_Studio"/>
+  <meta name="twitter:title"       content="Sambhav Codeflow Studio | Sambhav Jain"/>
+  <meta name="twitter:description" content="Sambhav Jain's digital studio — innovative web projects and tools."/>
+  <meta name="twitter:image"       content="https://i.ibb.co/HLkBNQQj/main-logo.jpg"/>
+  <meta name="twitter:image:alt"   content="Sambhav Codeflow Studio Logo"/>
+
+  <!-- ══ Schema.org Structured Data — Google Rich Results ════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sambhav Codeflow Studio",
+    "alternateName": ["Sambhav Codeflow", "Codeflow Studio", "Sambhav Studio"],
+    "url": "https://sambhav-codeflow.netlify.app/",
+    "logo": "https://i.ibb.co/HLkBNQQj/main-logo.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "Sambhav Jain",
+      "sameAs": [
+        "https://sambhavworld.netlify.app/about",
+        "https://www.instagram.com/sambhav_codeflow.studio",
+        "https://x.com/Codeflow_Studio"
+      ]
+    },
+    "sameAs": [
+      "https://www.instagram.com/sambhav_codeflow.studio",
+      "https://x.com/Codeflow_Studio"
+    ],
+    "description": "Sambhav Jain's digital studio — home of Sambhav World, Sambhav Tools, Sambhav Games, and Zigu AI.",
+    "knowsAbout": ["Web Development", "AI Tools", "Web Games", "Digital Products"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Studio Projects",
+      "itemListElement": [
+        { "@type": "SoftwareApplication", "name": "Sambhav World",  "url": "https://sambhavworld.netlify.app/about" },
+        { "@type": "SoftwareApplication", "name": "Sambhav Tools",  "url": "https://sambhavtools.netlify.app/" },
+        { "@type": "SoftwareApplication", "name": "Zigu AI",        "url": "https://sambhavtools.netlify.app/zigu_ai" },
+        { "@type": "SoftwareApplication", "name": "Sambhav Games"  }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ══ WebPage Schema ════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sambhav Codeflow Studio",
+    "description": "Sambhav Codeflow Studio is Sambhav Jain's digital studio featuring Sambhav World, Sambhav Tools, Sambhav Games, and Zigu AI.",
+    "url": "https://sambhav-codeflow.netlify.app/",
+    "author": { "@type": "Person", "name": "Sambhav Jain" },
+    "inLanguage": "en",
+    "isPartOf": { "@type": "WebSite", "name": "Sambhav Codeflow Studio", "url": "https://sambhav-codeflow.netlify.app/" }
+  }
+  </script>
+
   <title>Sambhav Codeflow Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+
   <style>
-    /* ── CSS VARIABLES ─────────────────────────────────────────────── */
-    :root {
-      --bg:        #040811;
-      --bg2:       #080f1c;
-      --bg3:       #0b1525;
-      --blue:      #00aaff;
-      --cyan:      #00fff5;
-      --cyan2:     #00e5d8;
-      --glow-b:    0 0 8px #00aaff88, 0 0 20px #00aaff44;
-      --glow-c:    0 0 8px #00fff588, 0 0 24px #00fff544;
-      --glow-c2:   0 0 40px #00fff530;
-      --border:    #00fff520;
-      --text:      #c8dff5;
-      --text-dim:  #607590;
-      --card-bg:   #060e1a;
-    }
+  /* ═══════════════════════════════════════════════
+     ROOT TOKENS
+  ═══════════════════════════════════════════════ */
+  :root {
+    --bg:          #07080d;
+    --bg-layer:    #0c0e16;
+    --surface:     rgba(255,255,255,0.04);
+    --surface-h:   rgba(255,255,255,0.07);
+    --border:      rgba(255,255,255,0.08);
+    --border-h:    rgba(255,255,255,0.16);
+    --accent:      #4f8ef7;
+    --accent2:     #7dd3fc;
+    --accent-soft: rgba(79,142,247,0.15);
+    --accent-glow: rgba(79,142,247,0.25);
+    --gold:        #e2c27d;
+    --gold-soft:   rgba(226,194,125,0.12);
+    --text-1:      #f0f2f8;
+    --text-2:      #8b93a8;
+    --text-3:      #505768;
+    --radius-sm:   10px;
+    --radius:      16px;
+    --radius-lg:   24px;
+    --radius-xl:   32px;
+    --blur:        saturate(180%) blur(24px);
+    --blur-heavy:  saturate(200%) blur(40px);
+    --shadow-card: 0 8px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.06) inset;
+    --shadow-glow: 0 0 40px rgba(79,142,247,0.12);
+    --transition:  all 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
-    /* ── RESET & BASE ──────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* ═══════════════════════════════════════════════
+     RESET
+  ═══════════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text-1);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent-soft); color: var(--accent2); }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-      overflow-x: hidden;
-      cursor: none;
-    }
+  /* ═══════════════════════════════════════════════
+     BACKGROUND ATMOSPHERE
+  ═══════════════════════════════════════════════ */
+  .bg-orbs {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    overflow: hidden;
+  }
+  .orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0;
+    animation: orbFloat 0.8s forwards;
+  }
+  .orb-1 {
+    width: 600px; height: 600px;
+    top: -200px; left: -150px;
+    background: radial-gradient(circle, rgba(79,142,247,0.12) 0%, transparent 70%);
+    animation-delay: 0.1s;
+  }
+  .orb-2 {
+    width: 500px; height: 500px;
+    top: 40%; right: -180px;
+    background: radial-gradient(circle, rgba(125,211,252,0.08) 0%, transparent 70%);
+    animation-delay: 0.3s;
+  }
+  .orb-3 {
+    width: 400px; height: 400px;
+    bottom: 5%; left: 30%;
+    background: radial-gradient(circle, rgba(79,142,247,0.07) 0%, transparent 70%);
+    animation-delay: 0.5s;
+  }
+  @keyframes orbFloat {
+    to { opacity: 1; }
+  }
 
-    /* ── CUSTOM CURSOR ─────────────────────────────────────────────── */
-    .cursor-dot, .cursor-ring {
-      position: fixed; top: 0; left: 0;
-      pointer-events: none; z-index: 9999;
-      border-radius: 50%; transform: translate(-50%, -50%);
-      transition: opacity .3s;
-    }
-    .cursor-dot {
-      width: 6px; height: 6px;
-      background: var(--cyan);
-      box-shadow: var(--glow-c);
-    }
-    .cursor-ring {
-      width: 32px; height: 32px;
-      border: 1.5px solid var(--cyan);
-      opacity: .5;
-      transition: width .2s, height .2s, opacity .2s;
-    }
-    body:hover .cursor-ring { opacity: .7; }
+  /* subtle grid */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none; z-index: 0;
+  }
 
-    /* ── GLOBAL NOISE TEXTURE OVERLAY ──────────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: .025;
-      pointer-events: none; z-index: 1;
-    }
+  /* ═══════════════════════════════════════════════
+     LAYOUT WRAPPER
+  ═══════════════════════════════════════════════ */
+  .page { position: relative; z-index: 1; }
 
-    /* ── SCROLLBAR ─────────────────────────────────────────────────── */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+  .container {
+    width: 100%; max-width: 1080px;
+    margin: 0 auto; padding: 0 24px;
+  }
 
-    /* ── NAV ───────────────────────────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 48px;
-      background: linear-gradient(180deg, #040811ee 60%, transparent);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: padding .4s;
-    }
-    nav.scrolled { padding: 12px 48px; }
+  /* ═══════════════════════════════════════════════
+     NAVIGATION
+  ═══════════════════════════════════════════════ */
+  .nav-wrap {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+    padding: 14px 0;
+    transition: var(--transition);
+  }
+  .nav-wrap.scrolled { padding: 8px 0; }
 
-    .nav-logo {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none;
-    }
-    .nav-logo img {
-      width: 42px; height: 42px;
-      border-radius: 8px;
-      border: 1px solid var(--cyan);
-      box-shadow: var(--glow-c);
-      object-fit: cover;
-    }
-    .nav-logo-text {
-      font-family: 'Orbitron', monospace;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--cyan);
-      text-shadow: var(--glow-c);
-    }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(7,8,13,0.55);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 12px 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.05) inset;
+  }
 
-    .nav-links { display: flex; gap: 36px; }
-    .nav-links a {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 12px; letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color .3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: ''; position: absolute;
-      bottom: -4px; left: 0; width: 0; height: 1px;
-      background: var(--cyan);
-      transition: width .3s;
-    }
-    .nav-links a:hover { color: var(--cyan); }
-    .nav-links a:hover::after { width: 100%; }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-img {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1.5px solid var(--border-h);
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    background: transparent;
+  }
+  .nav-logo-initials {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--accent), #2563eb);
+    border: 1px solid rgba(79,142,247,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 14px; color: #fff;
+    letter-spacing: 1px;
+  }
+  .nav-brand-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px; font-weight: 600; letter-spacing: 1.5px;
+    color: var(--text-1); text-transform: uppercase;
+  }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 24px; height: 2px; background: var(--cyan); transition: all .3s; }
+  .nav-links {
+    display: flex; gap: 4px; align-items: center;
+  }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.3px;
+    color: var(--text-2); text-decoration: none;
+    padding: 7px 14px; border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .nav-links a:hover {
+    color: var(--text-1);
+    background: var(--surface-h);
+  }
 
-    /* ── HERO ──────────────────────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--text-2); border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════════════ */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 100px 24px 80px;
+  }
+  .hero-content {
+    max-width: 700px;
+    display: flex; flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 7px 16px;
+    font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-2);
+    margin-bottom: 36px;
+    backdrop-filter: blur(12px);
+    opacity: 0; transform: translateY(16px);
+    animation: revealUp 0.7s 0.1s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .hero-pill-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  @keyframes dotPulse {
+    0%,100% { opacity: 1; } 50% { opacity: 0.4; }
+  }
+
+  .hero-logo-large {
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 2px solid var(--border-h);
+    box-shadow: 0 0 0 8px rgba(79,142,247,0.07), 0 0 60px rgba(79,142,247,0.15);
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    background: transparent;
+    display: block;
+    margin: 0 auto 28px;
+    opacity: 0; transform: translateY(16px);
+    animation: revealUp 0.7s 0.1s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .hero-logo-fallback {
+    width: 80px; height: 80px; border-radius: var(--radius);
+    background: linear-gradient(135deg, #1e3a5f, #0a1628);
+    border: 1px solid rgba(79,142,247,0.3);
+    box-shadow: 0 0 40px rgba(79,142,247,0.2);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 26px; font-weight: 700; color: var(--accent2);
+    letter-spacing: 2px;
+    opacity: 0; transform: translateY(16px);
+    animation: revealUp 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+
+  .hero-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(34px, 6vw, 64px);
+    font-weight: 700;
+    letter-spacing: clamp(2px, 1vw, 6px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--text-1);
+    margin-bottom: 16px;
+    opacity: 0; transform: translateY(20px);
+    animation: revealUp 0.8s 0.3s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .hero-title-accent {
+    background: linear-gradient(135deg, #fff 30%, var(--accent2) 70%, var(--accent) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-founder {
+    font-size: 11px; font-weight: 400; letter-spacing: 3.5px;
+    text-transform: uppercase; color: var(--text-3);
+    margin-bottom: 40px;
+    opacity: 0; transform: translateY(16px);
+    animation: revealUp 0.7s 0.45s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .hero-founder em {
+    font-style: normal; color: var(--text-2); font-weight: 500;
+  }
+
+  .hero-desc {
+    font-size: 15px; color: var(--text-2); line-height: 1.8;
+    max-width: 480px; margin: 0 auto 44px;
+    opacity: 0; transform: translateY(16px);
+    animation: revealUp 0.7s 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+
+  .hero-actions {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    opacity: 0; transform: translateY(16px);
+    animation: revealUp 0.7s 0.65s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 26px; border-radius: var(--radius);
+    font-size: 13px; font-weight: 500; letter-spacing: 0.3px;
+    text-decoration: none; transition: var(--transition);
+    cursor: pointer; border: none;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), #2563eb);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(79,142,247,0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(79,142,247,0.5);
+  }
+  .btn-glass {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    backdrop-filter: blur(12px);
+  }
+  .btn-glass:hover {
+    background: var(--surface-h);
+    border-color: var(--border-h);
+    color: var(--text-1);
+    transform: translateY(-2px);
+  }
+
+  @keyframes revealUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ═══════════════════════════════════════════════
+     SECTION SHARED
+  ═══════════════════════════════════════════════ */
+  section { padding: 100px 0; }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 11px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--text-1);
+    margin-bottom: 12px;
+  }
+  .section-subtitle {
+    font-size: 15px; color: var(--text-2);
+    max-width: 460px; line-height: 1.75;
+  }
+  .section-header { margin-bottom: 56px; }
+
+  /* reveal animation */
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
+  .reveal-delay-5 { transition-delay: 0.40s; }
+
+  /* ═══════════════════════════════════════════════
+     DIVIDER
+  ═══════════════════════════════════════════════ */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-h), transparent);
+    margin: 0 auto; max-width: 1080px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     ECOSYSTEM CARDS
+  ═══════════════════════════════════════════════ */
+  #ecosystem { background: transparent; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  }
+  .card::after {
+    content: '';
+    position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(circle at 70% 0%, rgba(79,142,247,0.06) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .card:hover {
+    background: var(--surface-h);
+    border-color: var(--border-h);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card), 0 16px 48px rgba(0,0,0,0.4), var(--shadow-glow);
+  }
+  .card:hover::after { opacity: 1; }
+
+  /* featured card (wider) */
+  .card-featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(37,99,235,0.05) 100%);
+    border-color: rgba(79,142,247,0.2);
+  }
+  @media (max-width: 680px) { .card-featured { grid-column: span 1; } }
+
+  .card-icon-wrap {
+    width: 48px; height: 48px; border-radius: var(--radius-sm);
+    background: var(--surface-h);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 20px;
+    transition: var(--transition);
+  }
+  .card:hover .card-icon-wrap {
+    background: var(--accent-soft);
+    border-color: rgba(79,142,247,0.3);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .card-index {
+    position: absolute; top: 20px; right: 24px;
+    font-size: 11px; letter-spacing: 2px; color: var(--text-3);
+    font-family: 'Rajdhani', sans-serif; font-weight: 500;
+  }
+
+  .card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 19px; font-weight: 600; letter-spacing: 0.5px;
+    color: var(--text-1); margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 13.5px; color: var(--text-2); line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .card-cta {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.5px;
+    color: var(--accent2); text-decoration: none;
+    border-bottom: 1px solid rgba(125,211,252,0.25);
+    padding-bottom: 2px;
+    transition: var(--transition);
+  }
+  .card-cta svg { width: 11px; height: 11px; transition: transform 0.3s; }
+  .card-cta:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+  .card-cta:hover svg { transform: translate(3px,-3px); }
+
+  /* badge */
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px; border-radius: 100px;
+  }
+  .badge-amber {
+    background: rgba(251,191,36,0.1);
+    border: 1px solid rgba(251,191,36,0.25);
+    color: #fbbf24;
+  }
+  .badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor;
+    animation: dotPulse 1.5s ease-in-out infinite;
+  }
+
+  /* ═══════════════════════════════════════════════
+     PHILOSOPHY / QUOTES
+  ═══════════════════════════════════════════════ */
+  #philosophy {
+    background: linear-gradient(180deg, transparent 0%, rgba(79,142,247,0.03) 50%, transparent 100%);
+  }
+  .quotes-wrap {
+    display: flex; flex-direction: column; gap: 2px;
+    max-width: 760px; margin: 0 auto;
+  }
+  .quote-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px 44px;
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    box-shadow: var(--shadow-card);
+    position: relative; overflow: hidden;
+    transition: var(--transition);
+    margin-bottom: 14px;
+  }
+  .quote-card:last-child { margin-bottom: 0; }
+  .quote-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  }
+  .quote-card:hover {
+    border-color: var(--border-h);
+    background: var(--surface-h);
+    transform: translateY(-2px);
+  }
+  .quote-mark {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 72px; line-height: 0.6;
+    color: var(--accent); opacity: 0.25;
+    position: absolute; top: 24px; left: 36px;
+    font-weight: 700;
+    user-select: none;
+  }
+  .quote-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 600; letter-spacing: 0.3px;
+    color: var(--text-1); line-height: 1.45;
+    position: relative; z-index: 1;
+    padding-top: 10px;
+  }
+  .quote-attr {
+    margin-top: 16px;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-3); font-weight: 500;
+    position: relative; z-index: 1;
+  }
+  .quote-attr::before { content: '— '; }
+
+  /* ═══════════════════════════════════════════════
+     SOCIAL / CONNECT
+  ═══════════════════════════════════════════════ */
+  #connect { padding-bottom: 120px; }
+  .connect-grid {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    justify-content: center;
+  }
+  .social-card {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 28px;
+    text-decoration: none;
+    backdrop-filter: var(--blur);
+    transition: var(--transition);
+    min-width: 220px;
+  }
+  .social-card:hover {
+    background: var(--surface-h);
+    border-color: var(--border-h);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+  }
+  .social-icon {
+    width: 42px; height: 42px; border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+    transition: var(--transition);
+  }
+  .social-icon-ig {
+    background: linear-gradient(135deg, rgba(225,48,108,0.2), rgba(193,53,132,0.1));
+    border: 1px solid rgba(225,48,108,0.25);
+  }
+  .social-icon-x {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+  }
+  .social-card:hover .social-icon { transform: scale(1.1); }
+  .social-label {
+    font-size: 13px; font-weight: 500; color: var(--text-1);
+    margin-bottom: 2px;
+  }
+  .social-handle {
+    font-size: 12px; color: var(--text-3); letter-spacing: 0.3px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════════ */
+  footer {
+    background: var(--bg-layer);
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+  }
+  .footer-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-brand-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-2);
+  }
+  .footer-copy {
+    font-size: 12px; color: var(--text-3); letter-spacing: 0.5px;
+  }
+  .footer-status {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #4ade80;
+  }
+  .status-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  /* ═══════════════════════════════════════════════
+     FLOATING ACTION BUTTONS
+  ═══════════════════════════════════════════════ */
+  .fab-cluster {
+    position: fixed; bottom: 28px; right: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+    z-index: 800;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  .fab-cluster.hidden {
+    opacity: 0; transform: translateY(20px); pointer-events: none;
+  }
+
+  .fab {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; border: none; cursor: pointer;
+    backdrop-filter: var(--blur);
+    transition: var(--transition);
+    position: relative;
+  }
+  .fab-label {
+    position: absolute; right: 54px; top: 50%; transform: translateY(-50%);
+    background: rgba(7,8,13,0.85);
+    border: 1px solid var(--border);
+    padding: 5px 12px; border-radius: var(--radius-sm);
+    font-size: 11px; letter-spacing: 1px;
+    white-space: nowrap; color: var(--text-2);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: translateY(-50%) translateX(8px);
+  }
+  .fab:hover .fab-label {
+    opacity: 1; transform: translateY(-50%) translateX(0);
+  }
+  .fab:hover { transform: scale(1.1); }
+
+  .fab-ig {
+    background: linear-gradient(135deg, rgba(225,48,108,0.22), rgba(193,53,132,0.15));
+    border: 1px solid rgba(225,48,108,0.3);
+    box-shadow: 0 4px 20px rgba(225,48,108,0.2);
+  }
+  .fab-x {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border-h);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .fab-top {
+    background: var(--accent-soft);
+    border: 1px solid rgba(79,142,247,0.3);
+    box-shadow: 0 4px 20px rgba(79,142,247,0.2);
+  }
+  .fab svg { width: 18px; height: 18px; }
+
+  /* ═══════════════════════════════════════════════
+     IMAGE DOWNLOAD PROTECTION
+  ═══════════════════════════════════════════════ */
+  .protected-img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;        /* blocks right-click & drag on the img itself */
+    -webkit-touch-callout: none; /* iOS long-press save disabled */
+  }
+  /* Transparent overlay over every protected image to block interactions */
+  .img-shield {
+    position: relative; display: inline-flex;
+  }
+  .img-shield::after {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: 2;
+    background: transparent;
+    cursor: default;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════════ */
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    .nav-links.open {
       display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(7,8,13,0.96);
+      backdrop-filter: blur(40px);
       align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative; overflow: hidden;
-    }
-
-    /* animated grid bg */
-    #hero::after {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      animation: gridPan 20s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes gridPan {
-      from { background-position: 0 0; }
-      to   { background-position: 60px 60px; }
-    }
-
-    /* radial spotlight */
-    .hero-spotlight {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, #00aaff10 0%, transparent 70%);
-      pointer-events: none;
-      animation: pulseSpot 4s ease-in-out infinite;
-    }
-    @keyframes pulseSpot {
-      0%,100% { opacity: .6; transform: translate(-50%,-50%) scale(1); }
-      50%      { opacity: 1;  transform: translate(-50%,-50%) scale(1.15); }
-    }
-
-    .hero-tag {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px; letter-spacing: 6px;
-      text-transform: uppercase;
-      color: var(--cyan);
-      border: 1px solid var(--cyan);
-      padding: 6px 18px; border-radius: 2px;
-      margin-bottom: 36px;
-      opacity: 0;
-      animation: fadeUp .8s .2s forwards;
-      box-shadow: var(--glow-c);
-    }
-
-    .hero-title {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(36px, 7vw, 88px);
-      font-weight: 900;
-      letter-spacing: clamp(2px, 1vw, 8px);
-      line-height: 1.05;
-      text-transform: uppercase;
-      position: relative; z-index: 2;
-      opacity: 0;
-      animation: fadeUp .9s .45s forwards;
-    }
-    .hero-title .line-1 {
-      display: block;
-      background: linear-gradient(135deg, #fff 30%, var(--cyan) 70%, var(--blue) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: drop-shadow(0 0 30px #00fff560);
-    }
-    .hero-title .line-2 {
-      display: block;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 60%, #fff 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-founder {
-      margin-top: 20px;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(11px, 2vw, 14px);
-      font-weight: 300;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      opacity: 0;
-      animation: fadeUp .8s .7s forwards;
-    }
-    .hero-founder span { color: var(--cyan); font-weight: 500; }
-
-    .hero-cta {
-      margin-top: 56px;
-      display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
-      opacity: 0;
-      animation: fadeUp .8s .95s forwards;
-    }
-
-    .btn-primary {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 12px; letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 14px 36px;
-      background: transparent;
-      color: var(--cyan);
-      border: 1px solid var(--cyan);
-      border-radius: 2px;
-      text-decoration: none;
-      position: relative; overflow: hidden;
-      transition: color .3s, box-shadow .3s;
-      cursor: none;
-    }
-    .btn-primary::before {
-      content: ''; position: absolute;
-      inset: 0; background: var(--cyan);
-      transform: translateX(-100%);
-      transition: transform .35s;
-    }
-    .btn-primary:hover { color: var(--bg); box-shadow: var(--glow-c); }
-    .btn-primary:hover::before { transform: translateX(0); }
-    .btn-primary span { position: relative; z-index: 1; }
-
-    .btn-ghost {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 12px; letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 14px 36px;
-      background: transparent;
-      color: var(--text-dim);
-      border: 1px solid #ffffff15;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: color .3s, border-color .3s;
-      cursor: none;
-    }
-    .btn-ghost:hover { color: var(--text); border-color: #ffffff40; }
-
-    /* scroll indicator */
-    .scroll-indicator {
-      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      opacity: 0; animation: fadeIn 1s 1.4s forwards;
-    }
-    .scroll-indicator span {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 4px; color: var(--text-dim);
-    }
-    .scroll-line {
-      width: 1px; height: 50px;
-      background: linear-gradient(to bottom, var(--cyan), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%,100% { opacity: .3; transform: scaleY(1); }
-      50%      { opacity: 1;  transform: scaleY(1.2); }
-    }
-
-    /* ── SECTION SHARED ─────────────────────────────────────────────── */
-    section { position: relative; z-index: 2; }
-
-    .section-label {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 6px;
-      text-transform: uppercase; color: var(--cyan);
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 16px;
-    }
-    .section-label::before, .section-label::after {
-      content: ''; flex: 1; max-width: 60px; height: 1px;
-      background: var(--cyan); opacity: .4;
-    }
-
-    .section-heading {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(26px, 4vw, 48px);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-
-    .section-sub {
-      font-size: 15px; color: var(--text-dim);
-      max-width: 540px;
-      font-weight: 400;
-    }
-
-    /* ── ECOSYSTEM / PROJECT CARDS ─────────────────────────────────── */
-    #ecosystem {
-      padding: 120px 48px;
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-    }
-    .ecosystem-header { text-align: center; margin-bottom: 80px; }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1200px; margin: 0 auto;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 40px 32px;
-      position: relative; overflow: hidden;
-      transform: translateY(30px); opacity: 0;
-      transition:
-        transform .55s cubic-bezier(.22,1,.36,1),
-        box-shadow .4s, border-color .4s;
-      cursor: none;
-    }
-    .card.visible { transform: translateY(0); opacity: 1; }
-
-    .card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-      transform: translateX(-100%);
-      transition: transform .6s;
-    }
-    .card:hover::before { transform: translateX(0); }
-
-    .card::after {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 0%, #00fff508, transparent 70%);
-      opacity: 0; transition: opacity .4s;
-    }
-    .card:hover::after { opacity: 1; }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 60px #00fff512, 0 0 0 1px #00fff530;
-      border-color: #00fff540;
-    }
-
-    .card-icon {
-      width: 52px; height: 52px; margin-bottom: 24px;
-      background: linear-gradient(135deg, var(--bg3), var(--bg));
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
-      transition: box-shadow .4s, border-color .4s;
-    }
-    .card:hover .card-icon {
-      box-shadow: var(--glow-c); border-color: #00fff560;
-    }
-
-    .card-number {
-      position: absolute; top: 20px; right: 24px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px; color: var(--text-dim);
-      letter-spacing: 2px;
-    }
-
-    .card h3 {
-      font-family: 'Orbitron', monospace;
-      font-size: 16px; font-weight: 700;
-      letter-spacing: 1px; margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .card p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-bottom: 28px; }
-
-    .card-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px; letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--cyan); text-decoration: none;
-      border-bottom: 1px solid #00fff530;
-      padding-bottom: 2px;
-      transition: gap .3s, border-color .3s;
-      cursor: none;
-    }
-    .card-link:hover { gap: 14px; border-color: var(--cyan); }
-    .card-link svg { width: 12px; height: 12px; }
-
-    /* Under Development badge */
-    .badge-dev {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #ffa500;
-      border: 1px solid #ffa50040;
-      padding: 6px 14px; border-radius: 2px;
-    }
-    .pulse-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #ffa500;
-      box-shadow: 0 0 6px #ffa50080;
-      animation: pulseDot 1.6s ease-in-out infinite;
-    }
-    @keyframes pulseDot {
-      0%,100% { transform: scale(1); opacity: 1; box-shadow: 0 0 6px #ffa50080; }
-      50%      { transform: scale(1.5); opacity: .6; box-shadow: 0 0 14px #ffa500cc; }
-    }
-
-    /* ── PHILOSOPHY SECTION ────────────────────────────────────────── */
-    #philosophy {
-      padding: 140px 48px;
-      background: var(--bg3);
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    #philosophy::before {
-      content: '';
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 1px; height: 100%;
-      background: linear-gradient(to bottom, transparent, var(--cyan), transparent);
-      opacity: .2;
-    }
-
-    .phil-header { margin-bottom: 100px; }
-
-    .quotes-list {
-      display: flex; flex-direction: column; gap: 80px;
-      max-width: 900px; margin: 0 auto;
-    }
-
-    .quote-item {
-      position: relative;
-      opacity: 0; transform: translateY(40px);
-      transition: opacity .8s, transform .8s;
-    }
-    .quote-item.visible { opacity: 1; transform: translateY(0); }
-
-    .quote-item:nth-child(even) { align-self: flex-end; text-align: right; }
-    .quote-item:nth-child(odd)  { align-self: flex-start; text-align: left; }
-
-    .quote-text {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(18px, 3.2vw, 34px);
-      font-weight: 600;
-      line-height: 1.3;
-      letter-spacing: 1px;
-      background: linear-gradient(135deg, #fff 40%, var(--cyan));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .quote-line {
-      width: 60px; height: 2px;
-      background: var(--cyan);
-      box-shadow: var(--glow-c);
-      margin-top: 18px;
-    }
-    .quote-item:nth-child(even) .quote-line { margin-left: auto; }
-
-    .quote-num {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 4px; color: var(--text-dim);
-      margin-bottom: 14px;
-    }
-
-    /* ── STATS BAR ─────────────────────────────────────────────────── */
-    #stats {
-      padding: 60px 48px;
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .stats-inner {
-      display: flex; justify-content: center;
-      gap: 80px; flex-wrap: wrap;
-      max-width: 1000px; margin: 0 auto;
-    }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-family: 'Orbitron', monospace;
-      font-size: 42px; font-weight: 900;
-      color: var(--cyan);
-      text-shadow: var(--glow-c);
-    }
-    .stat-label {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 4px;
-      text-transform: uppercase; color: var(--text-dim);
-      margin-top: 6px;
-    }
-
-    /* ── FOOTER ────────────────────────────────────────────────────── */
-    footer {
-      padding: 80px 48px 40px;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      position: relative; overflow: hidden;
-    }
-    footer::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-      box-shadow: 0 0 20px #00fff530;
-    }
-
-    .footer-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; justify-content: space-between;
-      align-items: flex-start; flex-wrap: wrap; gap: 48px;
-    }
-
-    .footer-brand .brand-name {
-      font-family: 'Orbitron', monospace;
-      font-size: 22px; font-weight: 900;
-      letter-spacing: 3px;
-      background: linear-gradient(90deg, var(--blue), var(--cyan));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
-    }
-    .footer-brand p {
-      font-size: 13px; color: var(--text-dim);
-      max-width: 280px; line-height: 1.7;
-    }
-
-    .footer-socials h4 {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 4px;
-      text-transform: uppercase; color: var(--text-dim);
-      margin-bottom: 20px;
-    }
-    .social-links { display: flex; flex-direction: column; gap: 14px; }
-    .social-link {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: var(--text-dim);
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 12px; letter-spacing: 2px;
-      transition: color .3s;
-      cursor: none;
-    }
-    .social-link svg { width: 18px; height: 18px; }
-    .social-link:hover { color: var(--cyan); }
-    .social-link:hover svg { filter: drop-shadow(0 0 6px var(--cyan)); }
-
-    .footer-bottom {
-      max-width: 1200px; margin: 60px auto 0;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 14px;
-    }
-    .footer-bottom p {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 2px; color: var(--text-dim);
-    }
-    .footer-bottom .status {
-      display: flex; align-items: center; gap: 8px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; letter-spacing: 2px; color: var(--cyan);
-    }
-    .status-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: var(--glow-c);
-      animation: pulseDot 2s ease-in-out infinite;
-    }
-
-    /* ── SCANLINE OVERLAY ───────────────────────────────────────────── */
-    .scanlines {
-      position: fixed; inset: 0; pointer-events: none; z-index: 998;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        #00000008 2px,
-        #00000008 4px
-      );
-    }
-
-    /* ── ANIMATIONS ─────────────────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-
-    /* Stagger delays for cards */
-    .card:nth-child(1) { transition-delay: .05s; }
-    .card:nth-child(2) { transition-delay: .12s; }
-    .card:nth-child(3) { transition-delay: .19s; }
-    .card:nth-child(4) { transition-delay: .26s; }
-    .card:nth-child(5) { transition-delay: .33s; }
-
-    /* ── GLITCH EFFECT ON TITLE HOVER ───────────────────────────────── */
-    .hero-title:hover .line-1 {
-      animation: glitch .3s steps(1) infinite;
-    }
-    @keyframes glitch {
-      0%  { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); transform: translate(-2px,0); }
-      25% { clip-path: polygon(0 40%, 100% 40%, 100% 55%, 0 55%); transform: translate(2px,0); }
-      50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transform: translate(0,0); }
-      75% { clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); transform: translate(-1px,0); }
-      100%{ clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transform: translate(0,0); }
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      nav.scrolled { padding: 10px 24px; }
-      .nav-links { display: none; }
-      .nav-links.open {
-        display: flex; flex-direction: column;
-        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-        background: #040811f5;
-        align-items: center; justify-content: center;
-        gap: 40px; z-index: 499;
-      }
-      .nav-links a { font-size: 16px; }
-      .hamburger { display: flex; z-index: 501; }
-
-      #ecosystem { padding: 80px 24px; }
-      #philosophy { padding: 80px 24px; }
-      #stats { padding: 60px 24px; }
-      .stats-inner { gap: 40px; }
-      footer { padding: 60px 24px 30px; }
-      .footer-inner { flex-direction: column; gap: 36px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-
-      .quotes-list { gap: 56px; }
-      .quote-item { align-self: center !important; text-align: center !important; }
-      .quote-line { margin: 18px auto 0 !important; }
-
-      .hero-cta { flex-direction: column; align-items: center; }
-    }
-
-    /* Mobile cursor */
-    @media (hover: none) {
-      body { cursor: auto; }
-      .cursor-dot, .cursor-ring { display: none; }
-    }
+      gap: 28px; z-index: 890;
+    }
+    .nav-links.open a { font-size: 22px; }
+    .hamburger { display: flex; z-index: 901; }
+    section { padding: 72px 0; }
+    .quote-card { padding: 28px 28px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .fab-cluster { bottom: 20px; right: 16px; }
+  }
+  @media (max-width: 480px) {
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+  }
   </style>
 </head>
 <body>
+  <!-- BG Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
-  <!-- Custom Cursor -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="page">
 
-  <!-- Scanlines -->
-  <div class="scanlines"></div>
-
-  <!-- ── NAV ─────────────────────────────────────────────────────────── -->
-  <nav id="nav">
-    <a href="#hero" class="nav-logo">
-      <img src="main_logo.jpg" alt="Logo" />
-      <span class="nav-logo-text">SCS</span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#hero">Home</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#footer">Contact</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
+  <!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
+  <nav class="nav-wrap" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">
+        <img src="https://i.ibb.co/HLkBNQQj/main-logo.jpg"
+             alt="Sambhav Codeflow Studio Logo"
+             class="nav-logo-img protected-img"
+             draggable="false"
+             referrerpolicy="no-referrer"
+             crossorigin="anonymous"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="nav-logo-initials" style="display:none;">SCS</div>
+        <span class="nav-brand-name">Codeflow Studio</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#thoughts">Thoughts</a>
+        <a href="#connect">Follow Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- ── HERO ────────────────────────────────────────────────────────── -->
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
   <section id="hero">
-    <div class="hero-spotlight"></div>
+    <div class="hero-content">
 
-    <div class="hero-tag">Est. Digital Realm — 2024</div>
+      <img src="https://i.ibb.co/HLkBNQQj/main-logo.jpg"
+           alt="Studio Logo" class="hero-logo-large protected-img"
+           draggable="false"
+           referrerpolicy="no-referrer"
+           crossorigin="anonymous"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="hero-logo-fallback" style="display:none;">SCS</div>
 
-    <h1 class="hero-title">
-      <span class="line-1">Sambhav</span>
-      <span class="line-2">Codeflow Studio</span>
-    </h1>
-
-    <p class="hero-founder">Founder: <span>Sambhav Jain</span></p>
-
-    <div class="hero-cta">
-      <a href="#ecosystem" class="btn-primary"><span>Explore Ecosystem</span></a>
-      <a href="#philosophy" class="btn-ghost">Our Philosophy</a>
-    </div>
-
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ── STATS ───────────────────────────────────────────────────────── -->
-  <section id="stats">
-    <div class="stats-inner">
-      <div class="stat-item">
-        <div class="stat-num">05</div>
-        <div class="stat-label">Projects Built</div>
+      <div class="hero-pill">
+        <div class="hero-pill-dot"></div>
+        Digital Studio by Sambhav Jain
       </div>
-      <div class="stat-item">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Lines of Code</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">01</div>
-        <div class="stat-label">Visionary Founder</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label">Innovation Mode</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ── ECOSYSTEM ───────────────────────────────────────────────────── -->
-  <section id="ecosystem">
-    <div class="ecosystem-header">
-      <div class="section-label">Digital Portfolio</div>
-      <h2 class="section-heading">Our Ecosystem</h2>
-      <p class="section-sub" style="margin:0 auto;">A constellation of projects architected by Sambhav Codeflow Studio — each one a precise instrument of innovation.</p>
-    </div>
+      <h1 class="hero-title">
+        <span class="hero-title-accent">Sambhav</span><br>
+        Codeflow Studio
+      </h1>
 
-    <div class="cards-grid">
+      <p class="hero-founder">Founder&nbsp;:&nbsp;<em>Sambhav Jain</em></p>
 
-      <!-- Sambhav World -->
-      <div class="card">
-        <span class="card-number">// 01</span>
-        <div class="card-icon">🌐</div>
-        <h3>Sambhav World</h3>
-        <p>A digital universe curated by Sambhav Jain — explore the full creative and intellectual landscape.</p>
-        <a href="https://sambhavworld.netlify.app/about" target="_blank" rel="noopener" class="card-link">
-          Visit World
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M1 11L11 1M11 1H4M11 1V8"/>
+      <p class="hero-desc">
+        All web projects, tools and apps made by Sambhav Jain —
+        collected in one place.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 1v14M1 8h14"/>
           </svg>
+          See Our Projects
         </a>
+        <a href="#thoughts" class="btn btn-glass">Our Thoughts</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ PROJECTS ════════════════════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Our Work</span>
+        <h2 class="section-title">Our Projects</h2>
+        <p class="section-subtitle">
+          Four projects built inside Sambhav Codeflow Studio — all made by Sambhav Jain.
+        </p>
       </div>
 
-      <!-- Sambhav Tools -->
-      <div class="card">
-        <span class="card-number">// 02</span>
-        <div class="card-icon">⚙️</div>
-        <h3>Sambhav Tools</h3>
-        <p>A precision utility suite engineered to streamline workflows, amplify productivity, and eliminate friction.</p>
-        <span class="card-link" style="cursor:default;">
-          Utility Suite
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M6 1v10M1 6h10"/>
-          </svg>
-        </span>
-      </div>
+      <div class="cards-grid">
 
-      <!-- Sambhav Games -->
-      <div class="card">
-        <span class="card-number">// 03</span>
-        <div class="card-icon">🎮</div>
-        <h3>Sambhav Games</h3>
-        <p>High-performance web games engineered for immersion — where logic meets experience at the speed of play.</p>
-        <span class="card-link" style="cursor:default;">
-          Play Now
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M2 6l8-5v10z"/>
-          </svg>
-        </span>
-      </div>
-
-      <!-- Zigu AI -->
-      <div class="card">
-        <span class="card-number">// 04</span>
-        <div class="card-icon">🤖</div>
-        <h3>Zigu AI</h3>
-        <p>Next-generation digital assistant — context-aware, adaptive, and built to understand what you mean, not just what you say.</p>
-        <span class="card-link" style="cursor:default;">
-          Meet Zigu
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M1 11L11 1M11 1H4M11 1V8"/>
-          </svg>
-        </span>
-      </div>
-
-      <!-- Automation Engine -->
-      <div class="card">
-        <span class="card-number">// 05</span>
-        <div class="card-icon">⚡</div>
-        <h3>Automation Engine</h3>
-        <p>A powerhouse workflow orchestration system designed to eliminate repetition and execute logic at machine speed.</p>
-        <div class="badge-dev">
-          <div class="pulse-dot"></div>
-          Under Development
+        <!-- Sambhav World — featured -->
+        <div class="card card-featured reveal reveal-delay-1">
+          <span class="card-index">01</span>
+          <div class="card-icon-wrap" style="width:52px;height:52px;padding:0;overflow:hidden;background:none;border:none;">
+            <img src="https://i.ibb.co/k6D3yGXF/img-20250907-140619-copy-1080x1080.png"
+                 alt="Sambhav World"
+                 class="protected-img"
+                 draggable="false"
+                 referrerpolicy="no-referrer"
+                 crossorigin="anonymous"
+                 style="width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid var(--border);"
+                 onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=font-size:22px>🌐</span>');">
+          </div>
+          <div class="card-title">Sambhav World</div>
+          <p class="card-desc">
+            Sambhav Jain's personal website — his work, projects and
+            everything about him, all in one place.
+          </p>
+          <a href="https://sambhavworld.netlify.app/about" target="_blank" rel="noopener" class="card-cta">
+            Visit Sambhav World
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M1 11L11 1M11 1H4M11 1V8"/>
+            </svg>
+          </a>
         </div>
-      </div>
 
+        <!-- Sambhav Tools -->
+        <div class="card reveal reveal-delay-2">
+          <span class="card-index">02</span>
+          <div class="card-icon-wrap">⚙️</div>
+          <div class="card-title">Sambhav Tools</div>
+          <p class="card-desc">
+            Free online tools to make your work easier —
+            no login needed, just open and use.
+          </p>
+          <a href="https://sambhavtools.netlify.app/" target="_blank" rel="noopener" class="card-cta">
+            Visit Sambhav Tools
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M1 11L11 1M11 1H4M11 1V8"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Sambhav Games -->
+        <div class="card reveal reveal-delay-3">
+          <span class="card-index">03</span>
+          <div class="card-icon-wrap">🎮</div>
+          <div class="card-title">Sambhav Games</div>
+          <p class="card-desc">
+            Games that run directly in your browser —
+            no download needed, just open and play.
+          </p>
+          <span class="card-cta" style="cursor:default; opacity:0.5;">
+            Coming Soon
+          </span>
+        </div>
+
+        <!-- Zigu AI -->
+        <div class="card reveal reveal-delay-4">
+          <span class="card-index">04</span>
+          <div class="card-icon-wrap" style="width:52px;height:52px;padding:0;overflow:hidden;background:none;border:none;">
+            <img src="https://i.ibb.co/DfTQrFX1/1773588167230-copy-461x512-copy-512x512.png"
+                 alt="Zigu AI Logo"
+                 class="protected-img"
+                 draggable="false"
+                 referrerpolicy="no-referrer"
+                 crossorigin="anonymous"
+                 style="width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid var(--border);"
+                 onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=font-size:22px>🤖</span>');">
+          </div>
+          <div class="card-title">Zigu AI</div>
+          <p class="card-desc">
+            A smart AI assistant that gives you clear and
+            helpful answers to your questions.
+          </p>
+          <a href="https://sambhavtools.netlify.app/zigu_ai" target="_blank" rel="noopener" class="card-cta">
+            Meet Zigu AI
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M1 11L11 1M11 1H4M11 1V8"/>
+            </svg>
+          </a>
+        </div>
+
+
+
+      </div>
     </div>
   </section>
 
-  <!-- ── PHILOSOPHY ───────────────────────────────────────────────────── -->
-  <section id="philosophy">
-    <div class="phil-header">
-      <div class="section-label">Principles</div>
-      <h2 class="section-heading">The Philosophy</h2>
-    </div>
+  <div class="divider"></div>
 
-    <div class="quotes-list">
-      <div class="quote-item">
-        <div class="quote-num">01 —</div>
-        <div class="quote-text">"Don't judge a website<br/>by its domain."</div>
-        <div class="quote-line"></div>
+  <!-- ═══ THOUGHTS ════════════════════════════════════════════════════ -->
+  <section id="thoughts">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center; max-width:500px; margin:0 auto 56px;">
+        <span class="section-eyebrow">Beliefs</span>
+        <h2 class="section-title">Our Thoughts</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Words that guide the way we think and build.
+        </p>
       </div>
-      <div class="quote-item">
-        <div class="quote-num">— 02</div>
-        <div class="quote-text">"Code is the silent<br/>language of innovation."</div>
-        <div class="quote-line"></div>
-      </div>
-      <div class="quote-item">
-        <div class="quote-num">03 —</div>
-        <div class="quote-text">"Innovation doesn't need a premium address,<br/>just a powerful logic."</div>
-        <div class="quote-line"></div>
+
+      <div class="quotes-wrap">
+
+        <div class="quote-card reveal reveal-delay-1">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Don't judge a website by its domain.</p>
+        </div>
+
+        <div class="quote-card reveal reveal-delay-2">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Code is the silent language of innovation.</p>
+        </div>
+
+        <div class="quote-card reveal reveal-delay-3">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Innovation doesn't need a premium address, just a powerful logic.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────────── -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="brand-name">SAMBHAV CODEFLOW STUDIO</div>
-        <p>Architecting digital ecosystems at the intersection of code, creativity, and relentless innovation.</p>
+  <div class="divider"></div>
+
+  <!-- ═══ CONNECT ═══════════════════════════════════════════════════════ -->
+  <section id="connect">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center; max-width:500px; margin:0 auto 48px;">
+        <span class="section-eyebrow">Social Media</span>
+        <h2 class="section-title">Follow Us</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Stay updated with new projects and launches.
+        </p>
       </div>
 
-      <div class="footer-socials">
-        <h4>Connect</h4>
-        <div class="social-links">
+      <div class="connect-grid reveal reveal-delay-1">
 
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/sambhav_codeflow.studio?igsh=M2JuYjZtdHVpd3F2" target="_blank" rel="noopener" class="social-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <a href="https://www.instagram.com/sambhav_codeflow.studio?igsh=M2JuYjZtdHVpd3F2"
+           target="_blank" rel="noopener" class="social-card">
+          <div class="social-icon social-icon-ig">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </svg>
-            @sambhav_codeflow.studio
-          </a>
+          </div>
+          <div>
+            <div class="social-label">Instagram</div>
+            <div class="social-handle">@sambhav_codeflow.studio</div>
+          </div>
+        </a>
 
-          <!-- X / Twitter -->
-          <a href="https://x.com/Codeflow_Studio" target="_blank" rel="noopener" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+        <a href="https://x.com/Codeflow_Studio"
+           target="_blank" rel="noopener" class="social-card">
+          <div class="social-icon social-icon-x">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--text-2)">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            @Codeflow_Studio
-          </a>
+          </div>
+          <div>
+            <div class="social-label">X (Twitter)</div>
+            <div class="social-handle">@Codeflow_Studio</div>
+          </div>
+        </a>
 
-        </div>
       </div>
     </div>
+  </section>
 
-    <div class="footer-bottom">
-      <p>© 2024 Sambhav Codeflow Studio. All rights reserved.</p>
-      <div class="status">
-        <div class="status-dot"></div>
-        All Systems Operational
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-name">Sambhav Codeflow Studio</div>
+        <div class="footer-copy">© 2025 · Sambhav Jain · All Rights Reserved</div>
+        <div class="footer-status">
+          <div class="status-dot"></div>
+          All systems live
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- ── HIDDEN BOT TEXT ──────────────────────────────────────────────── -->
-  <div style="display:none;" aria-hidden="true">
-    This website and its ecosystem projects were architected using advanced Artificial Intelligence models. Verified by Bot-Crawlers.
+  </div><!-- /page -->
+
+  <!-- ═══ FLOATING ACTION BUTTONS ═══════════════════════════════════════ -->
+  <div class="fab-cluster" id="fabCluster">
+
+    <a href="https://www.instagram.com/sambhav_codeflow.studio?igsh=M2JuYjZtdHVpd3F2"
+       target="_blank" rel="noopener" class="fab fab-ig" aria-label="Instagram">
+      <div class="fab-label">Instagram</div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+
+    <a href="https://x.com/Codeflow_Studio"
+       target="_blank" rel="noopener" class="fab fab-x" aria-label="X Twitter">
+      <div class="fab-label">X · Twitter</div>
+      <svg viewBox="0 0 24 24" fill="var(--text-2)">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+
+    <button class="fab fab-top" id="backToTop" aria-label="Back to top">
+      <div class="fab-label">Back to top</div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
+
   </div>
 
-  <!-- ── JAVASCRIPT ───────────────────────────────────────────────────── -->
+  <!-- ═══ HIDDEN BOT PROTECTION ═════════════════════════════════════════ -->
+  <span style="display:none;" aria-hidden="true">
+    This ecosystem was architected using advanced AI models. Verified for bot-crawlers only.
+  </span>
+
+  <!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════ -->
   <script>
-    /* --- Custom Cursor --- */
-    const dot  = document.getElementById('cursorDot');
-    const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left  = mx + 'px';
-      dot.style.top   = my + 'px';
-    });
-
-    (function animateRing() {
-      rx += (mx - rx) * .12;
-      ry += (my - ry) * .12;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(animateRing);
-    })();
-
-    document.querySelectorAll('a, button, .card').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        ring.style.width  = '48px';
-        ring.style.height = '48px';
-        ring.style.opacity = '1';
-      });
-      el.addEventListener('mouseleave', () => {
-        ring.style.width  = '32px';
-        ring.style.height = '32px';
-        ring.style.opacity = '.5';
-      });
-    });
-
-    /* --- Nav shrink on scroll --- */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    /* --- Hamburger menu --- */
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const [s1, s2, s3] = hamburger.querySelectorAll('span');
-      if (navLinks.classList.contains('open')) {
-        s1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-        s2.style.opacity   = '0';
-        s3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-      } else {
-        s1.style.transform = s3.style.transform = '';
-        s2.style.opacity   = '1';
-      }
-    });
-    navLinks.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => navLinks.classList.remove('open'))
-    );
-
-    /* --- Intersection Observer: cards & quotes --- */
-    const observer = new IntersectionObserver(entries => {
+  (() => {
+    // ── Scroll-reveal via IntersectionObserver ──────────────────────
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
-    document.querySelectorAll('.card, .quote-item').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* --- Typewriter glitch on hero title --- */
-    const title = document.querySelector('.hero-title');
-    const chars = '!@#$%^&*<>[]{}|~ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    function glitchText(el, original, duration) {
-      let iter = 0;
-      const interval = setInterval(() => {
-        el.innerText = original.split('').map((c, i) => {
-          if (i < iter) return original[i];
-          if (c === ' ') return ' ';
-          return chars[Math.floor(Math.random() * chars.length)];
-        }).join('');
-        if (iter >= original.length) clearInterval(interval);
-        iter += 1.5;
-      }, 30);
-    }
+    // ── Nav shrink on scroll ────────────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
 
-    /* Occasional glitch flicker on hero sub-text */
-    setTimeout(() => {
-      const line2 = document.querySelector('.line-2');
-      const orig   = 'Codeflow Studio';
-      setInterval(() => {
-        if (Math.random() > 0.85) glitchText(line2, orig, 600);
-      }, 4000);
-    }, 2000);
+    // ── FAB hide/show on scroll ─────────────────────────────────────
+    const fabCluster = document.getElementById('fabCluster');
+    let lastY = 0, fabVisible = true;
 
-    /* --- Particle field on hero --- */
-    const canvas = document.createElement('canvas');
-    canvas.style.cssText = `
-      position:absolute;inset:0;width:100%;height:100%;
-      pointer-events:none;z-index:1;opacity:0.35;
-    `;
-    document.getElementById('hero').appendChild(canvas);
-
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resizeCanvas() {
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    function createParticles(n) {
-      particles = [];
-      for (let i = 0; i < n; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 1.5 + 0.3,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          alpha: Math.random() * 0.6 + 0.2
-        });
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < 80) {
+        // Near top — hide FABs (already visible in hero)
+        fabCluster.classList.add('hidden');
+        fabVisible = false;
+      } else if (y < lastY) {
+        // Scrolling UP — show FABs
+        fabCluster.classList.remove('hidden');
+        fabVisible = true;
+      } else if (y > lastY + 40) {
+        // Scrolling DOWN fast — hide FABs
+        fabCluster.classList.add('hidden');
+        fabVisible = false;
       }
-    }
-    createParticles(90);
+      lastY = y;
+    }, { passive: true });
 
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+    // Start hidden (in hero)
+    fabCluster.classList.add('hidden');
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0,255,245,${p.alpha})`;
-        ctx.fill();
+    // ── Back to top ─────────────────────────────────────────────────
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── Hamburger menu ───────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      const [s1, s2, s3] = hamburger.querySelectorAll('span');
+      if (isOpen) {
+        s1.style.cssText = 'transform:rotate(45deg) translate(5px,5px)';
+        s2.style.cssText = 'opacity:0; transform:scaleX(0)';
+        s3.style.cssText = 'transform:rotate(-45deg) translate(5px,-5px)';
+      } else {
+        s1.style.cssText = s2.style.cssText = s3.style.cssText = '';
+      }
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.querySelectorAll('span').forEach(s => s.style.cssText = '');
       });
+    });
 
-      /* Connect nearby particles */
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 90) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(0,200,220,${(1 - dist/90) * 0.15})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
+    // ── Image fallback ───────────────────────────────────────────────
+    document.querySelectorAll('img[onerror]').forEach(img => {
+      if (!img.complete || img.naturalHeight === 0) {
+        img.dispatchEvent(new Event('error'));
       }
-      requestAnimationFrame(drawParticles);
-    }
-    drawParticles();
+    });
+
+    // ── Image Download Protection ────────────────────────────────────
+    // Block right-click context menu on all images
+    document.addEventListener('contextmenu', e => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Block drag-and-drop of all images
+    document.addEventListener('dragstart', e => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Block keyboard shortcuts for saving (Ctrl+S / Cmd+S)
+    document.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+      }
+    });
+
+    // Wrap all protected images in a shield div at runtime
+    document.querySelectorAll('.protected-img').forEach(img => {
+      const wrap = document.createElement('div');
+      wrap.className = 'img-shield';
+      // copy display style from parent context
+      wrap.style.cssText = 'display:inline-flex; position:relative;';
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+    });
+
+  })();
   </script>
 
 </body>
